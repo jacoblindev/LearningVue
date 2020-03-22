@@ -1,12 +1,7 @@
-let app = new Vue({
-    el: '#app',
+new Vue({
+    el: '#simple-counter',
     data: {
-        greeting: 'Hello Vue~!!!',
-        age: 30,
-    }, 
-    methods: {
-        add() {
-            this.age++;
-        }
+        welcome: 'Hello Vue~!!!',
+        counter: 0
     }
 })

@@ -1,20 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue Practice</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-    <main id="app">
-        <h1>{{ greeting }}</h1>
-        <p>{{ age }}</p>
-        <button v-on:click='add'>ADD</button>
+  <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vue Practice</title>
+        <!-- Font Awesome Link -->
+        <script
+        src="https://kit.fontawesome.com/b4982d65ee.js"
+        crossorigin="anonymous"
+        ></script>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  </head>
+  <body>
+    <!-- Element where Vue instance will be injected! -->
+    <main id="simple-counter">
+        <div class="row container">
+            <div class="col s12 m6">
+              <div class="card indigo hoverable">
+                <div class="card-content white-text center-align">
+                  <span class="card-title">{{title}}</span>
+                  <h1>{{counter}}</h1>
+                </div>
+                <div class="card-action center-align">
+                    <button v-on:click="counter++" class="btn-floating btn-large waves-effect green"><i class="fas fa-plus"></i></button>
+                    <button v-on:click="counter--" class="btn-floating btn-large waves-effect red"><i class="fas fa-minus"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6">
+              <div class="card indigo hoverable">
+                <div class="card-content white-text center-align">
+                  <span class="card-title">{{title}}</span>
+                  <h1>{{counter}}</h1>
+                </div>
+                <div class="card-action center-align">
+                    <button v-on:click="counter++" class="btn-floating btn-large waves-effect green"><i class="fas fa-plus"></i></button>
+                    <button v-on:click="counter--" class="btn-floating btn-large waves-effect red"><i class="fas fa-minus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
     </main>
-
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>      
+    <!-- Vue CDN -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="app.js"></script>
-</body>
+    <script>
+        new Vue({
+            el: '#simple-counter',
+            data: {
+                title: 'Counter',
+                counter: 0
+            }
+        });
+    </script>
+  </body>
 </html>
