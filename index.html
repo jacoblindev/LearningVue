@@ -1,60 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vue Practice</title>
-        <!-- Font Awesome Link -->
-        <script
-        src="https://kit.fontawesome.com/b4982d65ee.js"
-        crossorigin="anonymous"
-        ></script>
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Practice</title>
+    <!-- Skeleton CSS  -->
+    <link rel="stylesheet" href="css/skeleton.css" />
   </head>
   <body>
-    <!-- Element where Vue instance will be injected! -->
-    <main id="simple-counter">
-        <div class="row container">
-            <div class="col s12 m6">
-              <div class="card indigo hoverable">
-                <div class="card-content white-text center-align">
-                  <span class="card-title">{{title}}</span>
-                  <h1>{{counter}}</h1>
-                </div>
-                <div class="card-action center-align">
-                    <button v-on:click="counter++" class="btn-floating btn-large waves-effect green"><i class="fas fa-plus"></i></button>
-                    <button v-on:click="counter--" class="btn-floating btn-large waves-effect red"><i class="fas fa-minus"></i></button>
-                </div>
-              </div>
-            </div>
-            <div class="col s12 m6">
-              <div class="card indigo hoverable">
-                <div class="card-content white-text center-align">
-                  <span class="card-title">{{title}}</span>
-                  <h1>{{counter}}</h1>
-                </div>
-                <div class="card-action center-align">
-                    <button v-on:click="counter++" class="btn-floating btn-large waves-effect green"><i class="fas fa-plus"></i></button>
-                    <button v-on:click="counter--" class="btn-floating btn-large waves-effect red"><i class="fas fa-minus"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
+    <main id="app" class="container">
+      <div class="row">
+        <h1>{{ welcome }}</h1>
+        <h3 v-once>This will not change: {{ welcome }}</h3>
+        <!-- Perform one-time interpolations that do not update on data change -->
+        <button v-on:click="welcome=welcomeVue">Change</button>
+      </div>
     </main>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>      
-    <!-- Vue CDN -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
-        // Vue instance
-        new Vue({
-            el: '#simple-counter',
-            data: {
-                title: 'Counter',
-                counter: 0
-            }
-        });
+      new Vue({
+        el: "#app",
+        data: {
+          welcome: "Hello World",
+          welcomeVue: "Hello Vue"
+        }
+      });
     </script>
   </body>
 </html>
