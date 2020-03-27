@@ -1,30 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vue Practice</title>
-    <!-- Skeleton CSS  -->
-    <link rel="stylesheet" href="css/skeleton.css" />
-  </head>
-  <body>
-    <main id="app" class="container">
-      <div class="row">
-        <h1>{{ welcome }}</h1>
-        <h3 v-once>This will not change: {{ welcome }}</h3>
-        <!-- Perform one-time interpolations that do not update on data change -->
-        <button v-on:click="welcome=welcomeVue">Change</button>
-      </div>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script>
-      new Vue({
-        el: "#app",
-        data: {
-          welcome: "Hello World",
-          welcomeVue: "Hello Vue"
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue Practice</title>
+  <!-- Skeleton CSS  -->
+  <link rel="stylesheet" href="css/skeleton.css" />
+</head>
+
+<body>
+  <main id="app" class="container">
+    <div class="row">
+      <h1>{{ welcome }}</h1>
+      <h3 v-once>This will not change: {{ welcome }}</h3>
+      <h3 v-pre>This will not change: {{ welcome }}</h3>
+      <div v-on:scroll.passive="onScroll"></div>
+      <!-- Perform one-time interpolations that do not update on data change -->
+      <button v-on:click="welcome=welcomeVue">Change</button>
+      <button v-on:click="warn">Submit</button>
+      <button v-on:click="say('hi')">Say hi</button>
+      <form v-on:submit.prevent>
+        <input type="email" name="email" v-on:keyup.enter="say('Fuck off!!')">
+        <input type="submit" value="$$$">
+      </form>
+      <button v-on:click.once="say('what')">Say what</button>
+      <!-- <input v-on:keyup.enter="submit"> -->
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        welcome: "Hello World",
+        welcomeVue: "Hello Vue"
+      },
+      methods: {
+        warn() {
+          this.welcome = "Stay HOME, don't go out...! 🦠🦠🦠";
+          alert("Wash your hands frequently");
+          alert("Maintain social distancing");
+          alert("Avoid touching eyes, nose and mouth");
+          alert("Practice respiratory hygiene");
+        },
+        say: function (message) {
+          console.log(message)
         }
-      });
-    </script>
-  </body>
+      }
+    });
+  </script>
+</body>
+
 </html>
