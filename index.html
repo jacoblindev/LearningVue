@@ -27,6 +27,14 @@
       <button v-on:click.once="say('what')">Say what</button>
       <!-- <input v-on:keyup.enter="submit"> -->
     </div>
+    <hr>
+    <h1>Dark or Light</h1>
+    <select v-model="message">
+      <option v-for="option in options" v-bind:value="option.value">
+        {{ option.mode }}
+      </option>
+    </select>
+    <span>🤔{{ message }}</span>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
@@ -34,7 +42,12 @@
       el: "#app",
       data: {
         welcome: "Hello World",
-        welcomeVue: "Hello Vue"
+        welcomeVue: "Hello Vue",
+        message: '🐞🐞🐞',
+            options: [
+              { mode: 'Dark', value: "No wonder u can't find 'Em All!" },
+              { mode: 'Light', value: "Good luck Catch 'Em All!" },
+            ]
       },
       methods: {
         warn() {
