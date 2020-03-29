@@ -35,9 +35,25 @@
       </option>
     </select>
     <span>🤔{{ message }}</span>
+    <hr>
+		    <button-counter title="Vue"></button-counter>
+        <button-counter title="Angular"></button-counter>
+        <button-counter title="React"></button-counter>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- <script src="app.js"></script> -->
   <script>
+    Vue.component('button-counter', {
+      props: ['title'],
+      data() {
+        return {
+          count: 0
+        }
+      },
+      template: `<button @click="count++">
+                  {{ title }} ❤️ {{ count }} times.
+                </button>`
+    })
     new Vue({
       el: "#app",
       data: {
@@ -61,7 +77,9 @@
           console.log(message)
         }
       }
-    });
+    })
+
+
   </script>
 </body>
 
