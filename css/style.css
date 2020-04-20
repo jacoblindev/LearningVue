@@ -1,0 +1,57 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Erica+One&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Frijole&display=swap');
+
+.box {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    width: 800px;
+    height: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box h1,
+.box h2 {
+    font-family: 'Frijole', cursive;
+    font-size: 9em;
+    line-height: .8em;
+}
+
+.box h2 {
+    font-size: 18em;
+}
+
+.bg {
+    background-image: url(../img/weeeeed.JPG);
+    background-size: cover;
+}
+
+.box::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: inherit;
+    background-size: cover;
+    z-index: -2;
+}
+
+.box::after {
+    position: absolute;
+    content: "";
+    top: 30px;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    background-color: rgba(255, 255, 255, .6);
+    z-index: -1;
+}

@@ -7,6 +7,7 @@
   <title>Vue Practice</title>
   <!-- Skeleton CSS  -->
   <link rel="stylesheet" href="css/skeleton.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -36,9 +37,18 @@
     </select>
     <span>🤔{{ message }}</span>
     <hr>
-		    <button-counter title="Vue"></button-counter>
-        <button-counter title="Angular"></button-counter>
-        <button-counter title="React"></button-counter>
+    <button-counter title="Vue"></button-counter>
+    <button-counter title="Angular"></button-counter>
+    <button-counter title="React"></button-counter>
+    <hr>
+
+    <div class="box bg">
+      <h1>HAPPY</h1>
+      <h2>4/20</h2>
+    </div>
+
+    <hr>
+
   </main>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <!-- <script src="app.js"></script> -->
@@ -60,10 +70,10 @@
         welcome: "Hello World",
         welcomeVue: "Hello Vue",
         message: '🐞🐞🐞',
-            options: [
-              { mode: 'Dark', value: "No wonder u can't find 'Em All!" },
-              { mode: 'Light', value: "Good luck Catch 'Em All!" },
-            ]
+        options: [
+          { mode: 'Dark', value: "No wonder u can't find 'Em All!" },
+          { mode: 'Light', value: "Good luck Catch 'Em All!" },
+        ]
       },
       methods: {
         warn() {
